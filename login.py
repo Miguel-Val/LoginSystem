@@ -14,45 +14,23 @@ def loginsys():
         print("Welcome back please log in!")
         loginuser = input("User name: ")
         loginpass = input("Password: ")
-        if stored_username[0] == loginuser and stored_pass[0] == loginpass:
-            print("Login Successful!")
-        elif loginuser == stored_username[1] and loginpass == stored_pass[1]:
-            print("Login Successful!")
-        elif loginuser == stored_username[2] and loginpass == stored_pass[2]:
-            print("Login Successful!")
-        elif loginuser == stored_username[3] and loginpass == stored_pass[3]:
-            print("Login Successful!")
-        elif stored_username[4] == loginuser and stored_pass[4] == loginpass:
-            print("Login Successful!")
-        else:
+        if loginuser in stored_username and loginpass in stored_pass:
+            print(suc)
+        elif loginuser not in stored_username and loginpass not in stored_pass:
             print(inc)
-
-        #if no users match stored users or passwords it will loop untill you get it right
-        #if you do get it right the loop will break and will output 
-
-        if loginuser not in stored_username or loginpass not in stored_pass:
             running = True
             while running:
                 print("Please try again")
-                loginusers = input("User name: ")
-                loginpasss = input("Password: ")
-                if stored_username[4] == loginusers and stored_pass[4] == loginpasss:
+                loopusers = input("User name: ")
+                looppass = input("Password: ")
+                if loopusers in stored_username and looppass in stored_pass:
                     print(suc)
                     break
-                elif loginusers == stored_username[1] and loginpasss == stored_pass[1]:
-                    print(suc)
-                    break
-                elif loginusers == stored_username[2] and loginpasss == stored_pass[2]:
-                    print(suc)
-                    break
-                elif loginusers == stored_username[3] and loginpasss == stored_pass[3]:
-                    print(suc)
-                    break
-                elif loginusers == stored_username[-1] and loginpasss == stored_pass[-1]:
-                    print(suc)
-                    break
-                else:
+                elif loopusers not in stored_username and looppass not in stored_pass:
                     print(inc)
+
+        #if no users match stored users or passwords it will loop untill you get it right
+        #if you do get it right the loop will break and will output 
     #if user says no to welcome message it will ask them to sign up and it will store their username and password
     if welcome.upper() == 'N':
         print("Please Sign up!")
@@ -63,43 +41,18 @@ def loginsys():
         print("Thank you please login!")
         loginuser = input("User name: ")
         loginpass = input("Password: ")
-        if stored_username[0] == loginuser and stored_pass[0] == loginpass:
-            print("Login Successful!")
-        elif loginuser == stored_username[-1] and loginpass == stored_pass[-1]:
+        if loginuser in stored_username and loginpass in stored_pass:
             print(suc)
-        elif loginuser == stored_username[1] and loginpass == stored_pass[1]:
-            print("Login Successful!")
-        elif loginuser == stored_username[2] and loginpass == stored_pass[2]:
-            print("Login Successful!")
-        elif loginuser == stored_username[3] and loginpass == stored_pass[3]:
-            print("Login Successful!")
-        elif stored_username[4] == loginuser and stored_pass[4] == loginpass:
-            print("Login Successful!")
-        else:
+        elif loginuser not in stored_username and loginpass not in stored_pass:
             print(inc)
-        if loginuser not in stored_username or loginpass not in stored_pass:
             running = True
             while running:
                 print("Please try again")
-                loginusers = input("User name: ")
-                loginpasss = input("Password: ")
-                if stored_username[4] == loginusers and stored_pass[4] == loginpasss:
+                loopusers = input("User name: ")
+                looppass = input("Password: ")
+                if loopusers in stored_username and looppass in stored_pass:
                     print(suc)
                     break
-                elif loginusers == stored_username[1] and loginpasss == stored_pass[1]:
-                    print(suc)
-                    break
-                elif loginusers == stored_username[2] and loginpasss == stored_pass[2]:
-                    print(suc)
-                    break
-                elif loginusers == stored_username[3] and loginpasss == stored_pass[3]:
-                    print(suc)
-                    break
-                elif loginusers == stored_username[-1] and loginpasss == stored_pass[-1]:
-                    print(suc)
-                    break
-                else:
+                elif loopusers not in stored_username and looppass not in stored_pass:
                     print(inc)
-
-
 loginsys()       
